@@ -1,9 +1,14 @@
 const express = require('express');
 const app = express();
 
-const bodyParser = require('body-parser');
 //const bodyParser = require('body-parser');
-app.use(bodyParser.json());
+
+app.use(express.json());
+
+/**
+ * In Express version 4.16+ (as mine -4.17-) their own body-parser implementation is now included 
+ * in the default Express package so there is no need for you to download another dependency.
+ */
 
 const mockUserData = [
     { name: 'Mark' },
